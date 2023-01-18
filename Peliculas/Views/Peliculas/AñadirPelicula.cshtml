@@ -1,0 +1,17 @@
+﻿@model Peliculas.Models.Pelicula
+@{
+    ViewData["Title"] = "AñadirPelicula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Añadir Pelicula</h1>
+@using (Html.BeginForm("AñadirPelicula", "Peliculas"))
+{
+            <div class="form-group">
+        @Html.LabelFor(peli => peli.Nombre)
+        @Html.TextBoxFor(peli => peli.Nombre, new { @class = "form-control"})
+        @Html.LabelFor(peli => peli.Descripcion)
+        @Html.TextAreaFor(peli => peli.Descripcion, new { @class = "form-control"})
+            </div>
+    @Html.ActionLink("Añadir","AñadirPelicula","Peliculas", new { @class = "btn btn-success" })
+}
